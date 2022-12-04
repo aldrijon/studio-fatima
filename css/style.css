@@ -1,0 +1,77 @@
+
+/* Agenda de Contatos - PHP */
+#tb1 {
+     color: #ffffff;
+     font-size: 1rem;
+     /*ckground-color: #c9c7c7;*/
+    }
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #232323;
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+
+.navbar {
+    background-color: #000000cc;
+}
+
+.navbar-header {
+    margin: auto;
+    letter-spacing: 2px;
+}
+
+.navbar-header a {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 1.0em;
+    color: #ced3d8;
+    text-decoration: none;
+}
+
+.navbar-header a:hover {
+    color: #ffffff;
+}
+
+body > .container {
+    margin-top: 120px;
+}
+
+.titulo {
+    margin-top: 65px;
+    margin-bottom: 35px;
+}
+
+/* Menu dropdown Login/Logout */
+.dropdown > ul {
+    background-color: #232323;
+}
+
+.dropdown-menu > li > a {
+    color: #360202;
+}
+
+#status {
+    text-align: center;
+    margin: 35px 0;
+}
+
+
+
+body.loading .modal-loading {
+    overflow: hidden;
+}
+
+
+#box1 {
+    background-color: rgb(54 54 54 / 30%);
+    border-radius: 8px;
+    box-shadow: 0 2px 3px rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 10%);
+    color: #4a4a4a;
+    display: block;
+    padding: 1.0rem;
+}
