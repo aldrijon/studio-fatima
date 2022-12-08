@@ -8,7 +8,7 @@ include('verifica_login.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Agenda PHP</title>
+    <title>Atualização Usuario</title>
     <!-- CSS do Bootstrap e CSS customizado -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -27,17 +27,20 @@ include('verifica_login.php');
                 <input type="text" name="nome" class="form-control" id="nome" placeholder="nome" value="<?php echo $nome; ?>">
                 </div>
             </div>
+            <br/>
             <div class="form-group row">
                 <label for="usuario" class="col-sm-3 col-form-label">usuario</label>
                 <div class="col-sm-7">
                 <input type="text" name="usuario" class="form-control" id="usuario" placeholder="usuario" value="<?php echo $usuario; ?>">
                 </div>
             </div>
+            <br/>
             <div class="form-group row">
                 <label for="senha" class="col-sm-3 col-form-label">senha</label>
                 <div class="col-sm-7">
-                <input type="password" name="senha" class="form-control" id="senha" placeholder="senha" value="<?php echo $senha; ?>">
+                <input required type="password" name="senha" class="form-control" id="senha" placeholder="senha" >
             </div>
+            <br/>
             </div>
             <div class="form-group row">
                 <div class="col-sm-7">

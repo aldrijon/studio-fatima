@@ -33,16 +33,16 @@ session_start();
                     unset($_SESSION['nao_autenticado']);
                     ?>
                     <div class="div" id="box1">
-                        <form action="login.php" method="POST">
+                        <form id="formulario" action="login.php" method="POST">
                             <div class="field">
                                 <div class="control">
-                                    <input name="usuario" name="text" class="input is-medium" placeholder="usuario" autofocus="">
+                                    <input id="usuario" name="usuario" name="text" class="input is-medium" placeholder="usuario" autofocus="">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input name="senha" class="input is-medium" type="password" placeholder="senha">
+                                    <input id="senha" name="senha" class="input is-medium" type="password" placeholder="senha">
                                 </div>
                             </div>
 
@@ -50,12 +50,12 @@ session_start();
                             
                             </div>
                             
-                            <button type="submit" class="button is-block is-link is-medium is-fullwidth">Entrar</button>
+                            <button id="send" type="submit" class="button is-block is-link is-medium is-fullwidth">Entrar</button>
                             <br/>
-                            <div id="buttonDiv" ></div> 
+                            
 
                         </form>
-
+                        <div id="buttonDiv" ></div>
                     </div>
                 </div>
             </div>
@@ -66,24 +66,25 @@ session_start();
   <script src="https://accounts.google.com/gsi/client" async defer></script> <!--biblioteca APi para login com google  -->
   <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js" async defer></script>   <!-- decodficar informaçoes do google -->
   <script>
-    function handleCredentialResponse(response) {      // console.log("Encoded JWT ID token: " + response.credential);
+    
+    function handleCredentialResponse(response) {      //Aquisição de dados da API " response.credential);
       const data = jwt_decode(response.credential)
 
-      console.log(data)
-      fullName.textContent = data.name
-      sub.textContent = data.sub
-      given_name.textContent = data.given_name
-      family_name.textContent = data.family_name
-      email.textContent = data.email
-      senha.textContent = data.email_verified
-      
-      
+     document.getElementById('usuario').value = data.name
+     document.getElementById('senha').value = data.email
+     const btn = document.querySelector("#send");
+     btn.click();
+        
     }
+
+    //chaves de acesso a API 
     window.onload = function () {
       google.accounts.id.initialize({
         client_id: "574297750864-fs736lnnot1isra1ahn0a383gja70apj.apps.googleusercontent.com", // Id da API google
         callback: handleCredentialResponse
       });
+
+      //renderização do botao de login social
       google.accounts.id.renderButton(
           document.getElementById("buttonDiv"),{ 
           }  // costumizaçao de botao com o google gerador (https://developers.google.com/identity/gsi/web/tools/configurator)
